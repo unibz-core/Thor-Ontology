@@ -1,0 +1,145 @@
+@prefix : <http://purl.org/thor/1.0/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix thor: <http://purl.org/thor/1.0/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@base <http://purl.org/thor/1.0/> .
+
+<http://purl.org/thor/1.0/> rdf:type owl:Ontology ;
+                             owl:imports <http://www.lexinfo.net/ontology/3.0/lexinfo> ,
+                                         <http://www.w3.org/2004/02/skos/core> ,
+                                         <http://www.w3.org/ns/lemon/ontolex> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/thor/1.0/broadMapping
+thor:broadMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/closeMapping
+thor:closeMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  rdfs:comment "The property thor:closeMapping is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications."^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/exactMapping
+thor:exactMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  rdf:type owl:SymmetricProperty ,
+                           owl:TransitiveProperty ;
+                  rdfs:comment "The property thor:exactMapping is used to link two semantic elements, indicating that the semantic elements can be used interchangeably across all information retrieval applications."^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/hasContext
+thor:hasContext rdf:type owl:ObjectProperty ;
+                rdfs:domain ontolex:LexicalConcept ;
+                rdfs:range thor:Context ;
+                rdfs:comment "If a LexicalConcept has a isLexicalizedSense of a LexicalSense that has a lexinfo:domain relation to a Domain, than the LexicalConcept has a thor:domain relation to the same Domain."^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/mappingProperty
+thor:mappingProperty rdf:type owl:ObjectProperty ;
+                     rdfs:domain thor:SemanticElement ;
+                     rdfs:range thor:SemanticElement ;
+                     rdfs:comment "The thor:MappingProperties are thor:closeMapping, thor:exactMapping, thor:broadMapping, thor:narrowMapping and thor:relatedMapping. These properties are used to state mapping (alignment) links between any kind of semantic element (Lexical Concepts, Lexical Senses or Lexical Entries), where the links are inherent in the meaning of the linked elements."^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/narrowMapping
+thor:narrowMapping rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf thor:mappingProperty ;
+                   rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/relatedMapping
+thor:relatedMapping rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf thor:mappingProperty ;
+                    rdf:type owl:SymmetricProperty ;
+                    rdfs:comment "The property thor:relatedMapping is used to state an associative mapping link between two semantic elements."^^rdf:langString .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/thor/1.0/Community
+thor:Community rdf:type owl:Class ;
+               rdfs:subClassOf thor:Context .
+
+
+###  http://purl.org/thor/1.0/Context
+thor:Context rdf:type owl:Class ;
+             rdfs:comment "Context is used for specifying the use of senses for the better definition of them."^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/Definition
+thor:Definition rdf:type owl:Class ;
+                rdfs:comment "Used for reifications of the definitions of the semantic elements. With this class it is possible to relate the textual definitions with other properties, like the definition's source."^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/Organization
+thor:Organization rdf:type owl:Class ;
+                  rdfs:subClassOf thor:Context .
+
+
+###  http://purl.org/thor/1.0/PreferredSense
+thor:PreferredSense rdf:type owl:Class ;
+                    rdfs:subClassOf ontolex:LexicalSense ;
+                    rdfs:comment """It is the Lexical Sense that is associated to the Lexical Entry that is going to became the skos:prefLabel for the generated Lexical Concept.
+
+Each SynSet (set of all Lexical Senses that are synonymous between themselves) have exactly one Preferred Sense."""^^rdf:langString .
+
+
+###  http://purl.org/thor/1.0/SemanticElement
+thor:SemanticElement rdf:type owl:Class .
+
+
+###  http://purl.org/thor/1.0/iStandard
+thor:iStandard rdf:type owl:Class ;
+               rdfs:subClassOf thor:Context .
+
+
+###  http://www.w3.org/2002/07/owl#Class
+owl:Class rdf:type owl:Class ;
+          rdfs:subClassOf thor:SemanticElement ;
+          owl:disjointWith ontolex:LexicalConcept ,
+                           ontolex:LexicalSense .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalConcept
+ontolex:LexicalConcept rdfs:subClassOf thor:SemanticElement ;
+                       owl:disjointWith ontolex:LexicalSense .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalSense
+ontolex:LexicalSense rdfs:subClassOf thor:SemanticElement .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdfs:subClassOf thor:Context .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( thor:Community
+                thor:Organization
+                thor:iStandard
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
