@@ -1,17 +1,18 @@
-@prefix : <http://purl.org/thor/> .
+@prefix : <https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix thor: <http://purl.org/thor/> .
+@prefix thor: <https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 @base <https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/> .
 
 <https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/> rdf:type owl:Ontology ;
+                                                                owl:versionIRI <https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/> ;
                                                                 owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                                                             <http://www.w3.org/ns/lemon/ontolex> .
 
@@ -19,107 +20,107 @@
 #    Object Properties
 #################################################################
 
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/broadMapping
-:broadMapping rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :mappingProperty ;
-              rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/broadMapping
+thor:broadMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
 
 
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/closeMapping
-:closeMapping rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :mappingProperty ;
-              rdfs:comment "The property thor:closeMapping is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications."^^rdf:langString .
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/closeMapping
+thor:closeMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  rdfs:comment "The property thor:closeMapping is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications."^^rdf:langString .
 
 
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/exactMapping
-:exactMapping rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf :mappingProperty ;
-              rdf:type owl:SymmetricProperty ,
-                       owl:TransitiveProperty ;
-              rdfs:comment "The property thor:exactMapping is used to link two semantic elements, indicating that the semantic elements can be used interchangeably across all information retrieval applications."^^rdf:langString .
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/exactMapping
+thor:exactMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  rdf:type owl:SymmetricProperty ,
+                           owl:TransitiveProperty ;
+                  rdfs:comment "The property thor:exactMapping is used to link two semantic elements, indicating that the semantic elements can be used interchangeably across all information retrieval applications."^^rdf:langString .
 
 
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/hasContext
-:hasContext rdf:type owl:ObjectProperty ;
-            rdfs:domain ontolex:LexicalConcept ;
-            rdfs:comment "If a LexicalConcept has a isLexicalizedSense of a LexicalSense that has a lexinfo:domain relation to a Domain, than the LexicalConcept has a thor:domain relation to the same Domain."^^rdf:langString .
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/hasContext
+thor:hasContext rdf:type owl:ObjectProperty ;
+                rdfs:domain ontolex:LexicalConcept ;
+                rdfs:comment "If a LexicalConcept has a isLexicalizedSense of a LexicalSense that has a lexinfo:domain relation to a Domain, than the LexicalConcept has a thor:domain relation to the same Domain."^^rdf:langString .
 
 
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/mappingProperty
-:mappingProperty rdf:type owl:ObjectProperty ;
-                 rdfs:domain :SemanticElement ;
-                 rdfs:range :SemanticElement ;
-                 rdfs:comment "The thor:MappingProperties are thor:closeMapping, thor:exactMapping, thor:broadMapping, thor:narrowMapping and thor:relatedMapping. These properties are used to state mapping (alignment) links between any kind of semantic element (Lexical Concepts, Lexical Senses or Lexical Entries), where the links are inherent in the meaning of the linked elements."^^rdf:langString .
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/mappingProperty
+thor:mappingProperty rdf:type owl:ObjectProperty ;
+                     rdfs:domain thor:SemanticElement ;
+                     rdfs:range thor:SemanticElement ;
+                     rdfs:comment "The thor:MappingProperties are thor:closeMapping, thor:exactMapping, thor:broadMapping, thor:narrowMapping and thor:relatedMapping. These properties are used to state mapping (alignment) links between any kind of semantic element (Lexical Concepts, Lexical Senses or Lexical Entries), where the links are inherent in the meaning of the linked elements."^^rdf:langString .
 
 
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/narrowMapping
-:narrowMapping rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :mappingProperty ;
-               rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/narrowMapping
+thor:narrowMapping rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf thor:mappingProperty ;
+                   rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
 
 
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/relatedMapping
-:relatedMapping rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :mappingProperty ;
-                rdf:type owl:SymmetricProperty ;
-                rdfs:comment "The property thor:relatedMapping is used to state an associative mapping link between two semantic elements."^^rdf:langString .
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/relatedMapping
+thor:relatedMapping rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf thor:mappingProperty ;
+                    rdf:type owl:SymmetricProperty ;
+                    rdfs:comment "The property thor:relatedMapping is used to state an associative mapping link between two semantic elements."^^rdf:langString .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/Community
+thor:Community rdf:type owl:Class ;
+               rdfs:subClassOf thor:Context .
+
+
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/Context
+thor:Context rdf:type owl:Class ;
+             rdfs:comment "Context is used for specifying the use of senses for the better definition of them."^^rdf:langString .
+
+
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/Definition
+thor:Definition rdf:type owl:Class ;
+                rdfs:comment "Used for reifications of the definitions of the semantic elements. With this class it is possible to relate the textual definitions with other properties, like the definition's source."^^rdf:langString .
+
+
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/Organization
+thor:Organization rdf:type owl:Class ;
+                  rdfs:subClassOf thor:Context .
+
+
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/PreferredSense
+thor:PreferredSense rdf:type owl:Class ;
+                    rdfs:subClassOf ontolex:LexicalSense ;
+                    rdfs:comment """It is the Lexical Sense that is associated to the Lexical Entry that is going to became the skos:prefLabel for the generated Lexical Concept.
+
+Each SynSet (set of all Lexical Senses that are synonymous between themselves) have exactly one Preferred Sense."""^^rdf:langString .
+
+
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/SemanticElement
+thor:SemanticElement rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/1.0/iStandard
+thor:iStandard rdf:type owl:Class ;
+               rdfs:subClassOf thor:Context .
+
+
 ###  http://www.w3.org/2002/07/owl#Class
 owl:Class rdf:type owl:Class ;
-          rdfs:subClassOf :SemanticElement ;
+          rdfs:subClassOf thor:SemanticElement ;
           owl:disjointWith ontolex:LexicalConcept ,
                            ontolex:LexicalSense .
 
 
 ###  http://www.w3.org/ns/lemon/ontolex#LexicalConcept
-ontolex:LexicalConcept rdfs:subClassOf :SemanticElement ;
+ontolex:LexicalConcept rdfs:subClassOf thor:SemanticElement ;
                        owl:disjointWith ontolex:LexicalSense .
 
 
 ###  http://www.w3.org/ns/lemon/ontolex#LexicalSense
-ontolex:LexicalSense rdfs:subClassOf :SemanticElement .
-
-
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/Community
-:Community rdf:type owl:Class ;
-           rdfs:subClassOf :Context .
-
-
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/Context
-:Context rdf:type owl:Class ;
-         rdfs:comment "Context is used for specifying the use of senses for the better definition of them."^^rdf:langString .
-
-
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/Definition
-:Definition rdf:type owl:Class ;
-            rdfs:comment "Used for reifications of the definitions of the semantic elements. With this class it is possible to relate the textual definitions with other properties, like the definition's source."^^rdf:langString .
-
-
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/Organization
-:Organization rdf:type owl:Class ;
-              rdfs:subClassOf :Context .
-
-
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/PreferredSense
-:PreferredSense rdf:type owl:Class ;
-                rdfs:subClassOf ontolex:LexicalSense ;
-                rdfs:comment """It is the Lexical Sense that is associated to the Lexical Entry that is going to became the skos:prefLabel for the generated Lexical Concept.
-
-Each SynSet (set of all Lexical Senses that are synonymous between themselves) have exactly one Preferred Sense."""^^rdf:langString .
-
-
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/SemanticElement
-:SemanticElement rdf:type owl:Class .
-
-
-###  https://raw.githubusercontent.com/unibz-core/thor/main/ThOR/iStandard
-:iStandard rdf:type owl:Class ;
-           rdfs:subClassOf :Context .
+ontolex:LexicalSense rdfs:subClassOf thor:SemanticElement .
 
 
 #################################################################
@@ -127,9 +128,9 @@ Each SynSet (set of all Lexical Senses that are synonymous between themselves) h
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Community
-                :Organization
-                :iStandard
+  owl:members ( thor:Community
+                thor:Organization
+                thor:iStandard
               )
 ] .
 
