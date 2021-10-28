@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://purl.org/thor/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://purl.org/thor/"
+     versionIRI="http://purl.org/thor/1.0.0/">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Prefix name="thor" IRI="http://purl.org/thor/"/>
+    <Prefix name="voaf" IRI="http://purl.org/vocommons/voaf#"/>
+    <Prefix name="synsem" IRI="http://www.w3.org/ns/lemon/synsem#"/>
+    <Prefix name="ontolex" IRI="http://www.w3.org/ns/lemon/ontolex#"/>
+    <Import>http://www.w3.org/2004/02/skos/core</Import>
+    <Import>http://www.w3.org/ns/lemon/ontolex</Import>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal>Elly Kampert</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal>Fabien Reniers</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal>Giancarlo Guizzardi</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal>Pedro Paulo Favato Barcelos</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal>Roxane Segers</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <Literal>Tiago Prince Sales</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>The objective of ThOR Ontology is to provide the vocabulary for building lexicons and thesauri for the Dutch healthcare domain. The OWL implementation of the ThOR Ontology is designed to provide an implementation artifact to structure a knowledge base (or knowledge graph), being suitable for Semantic Web and Linked Data applications.
+The ThOR Ontology uses concepts from SKOS [1], Ontolex [2], and Lexinfo [3], complementing them for accomplishing the purpose of being used for representing a lexicon that can be further transformed into a thesaurus using a specific tool built for this purpose, the ontolex2skos [4].
+ThOR stands for “Thesaurus and Ontology Representation”. The ThOR Project was a collaboration project that happened in 2021 between the Zorginstituut Nederland (ZIN) – the Dutch National Health Care Institute [5] – and the Free University of Bozen-Bolzano (Unibz) [6].
+For the source repository, see: https://github.com/unibz-core/thor/
+References
+[1] https://www.w3.org/TR/skos-reference/
+[2] https://www.w3.org/2016/05/ontolex/
+[3] https://github.com/ontolex/lexinfo
+[4] https://github.com/unibz-core/ontolex2skos
+[5] https://english.zorginstituutnederland.nl/
+[6] https://unibz.it/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>0.2.6</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="Context"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Definition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="PreferredSense"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SemanticElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="iStandard"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Class"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="broadMapping"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="closeMapping"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="exactMapping"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasContext"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="mappingProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="narrowMapping"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="relatedMapping"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="PreferredSense"/>
+        <Class abbreviatedIRI="ontolex:LexicalSense"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="iStandard"/>
+        <Class IRI="Context"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="owl:Class"/>
+        <Class IRI="SemanticElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ontolex:LexicalConcept"/>
+        <Class IRI="SemanticElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="ontolex:LexicalSense"/>
+        <Class IRI="SemanticElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
+        <Class IRI="Context"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="owl:Class"/>
+        <Class abbreviatedIRI="ontolex:LexicalConcept"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="owl:Class"/>
+        <Class abbreviatedIRI="ontolex:LexicalSense"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI="ontolex:LexicalConcept"/>
+        <Class abbreviatedIRI="ontolex:LexicalSense"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="broadMapping"/>
+        <ObjectProperty IRI="mappingProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="closeMapping"/>
+        <ObjectProperty IRI="mappingProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="exactMapping"/>
+        <ObjectProperty IRI="mappingProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="narrowMapping"/>
+        <ObjectProperty IRI="mappingProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="relatedMapping"/>
+        <ObjectProperty IRI="mappingProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="broadMapping"/>
+        <ObjectProperty IRI="narrowMapping"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="exactMapping"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="relatedMapping"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="exactMapping"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasContext"/>
+        <Class abbreviatedIRI="ontolex:LexicalConcept"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="mappingProperty"/>
+        <Class IRI="SemanticElement"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="mappingProperty"/>
+        <Class IRI="SemanticElement"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Context</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Context is used for specifying the use of senses for the better definition of them.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>Definition</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Used for reifications of the definitions of the semantic elements. With this class it is possible to relate the textual definitions with other properties, like the definition&apos;s source.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>PreferredSense</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">It is the Lexical Sense that is associated to the Lexical Entry that is going to became the skos:prefLabel for the generated Lexical Concept.
+
+Each SynSet (set of all Lexical Senses that are synonymous between themselves) have exactly one Preferred Sense.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>broadMapping</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>closeMapping</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The property thor:closeMapping is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>exactMapping</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The property thor:exactMapping is used to link two semantic elements, indicating that the semantic elements can be used interchangeably across all information retrieval applications.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>hasContext</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">If a LexicalConcept has a isLexicalizedSense of a LexicalSense that has a lexinfo:domain relation to a Domain, than the LexicalConcept has a thor:domain relation to the same Domain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>mappingProperty</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The thor:MappingProperties are thor:closeMapping, thor:exactMapping, thor:broadMapping, thor:narrowMapping and thor:relatedMapping. These properties are used to state mapping (alignment) links between any kind of semantic element (Lexical Concepts, Lexical Senses or Lexical Entries), where the links are inherent in the meaning of the linked elements.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>narrowMapping</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>relatedMapping</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The property thor:relatedMapping is used to state an associative mapping link between two semantic elements.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
