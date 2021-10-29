@@ -1,51 +1,25 @@
-<?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://purl.org/thor/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://purl.org/thor/"
-     versionIRI="http://purl.org/thor/1.0.0/">
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
-    <Prefix name="thor" IRI="http://purl.org/thor/"/>
-    <Prefix name="voaf" IRI="http://purl.org/vocommons/voaf#"/>
-    <Prefix name="synsem" IRI="http://www.w3.org/ns/lemon/synsem#"/>
-    <Prefix name="ontolex" IRI="http://www.w3.org/ns/lemon/ontolex#"/>
-    <Import>http://www.w3.org/2004/02/skos/core</Import>
-    <Import>http://www.w3.org/ns/lemon/ontolex</Import>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-        <Literal>Elly Kampert</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-        <Literal>Fabien Reniers</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-        <Literal>Giancarlo Guizzardi</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-        <Literal>Pedro Paulo Favato Barcelos</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-        <Literal>Roxane Segers</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-        <Literal>Tiago Prince Sales</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal>The objective of ThOR Ontology is to provide the vocabulary for building lexicons and thesauri for the Dutch healthcare domain. The OWL implementation of the ThOR Ontology is designed to provide an implementation artifact to structure a knowledge base (or knowledge graph), being suitable for Semantic Web and Linked Data applications.
+@prefix : <http://purl.org/net/thor-ontology/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix thor: <http://purl.org/net/thor-ontology/> .
+@prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@base <http://purl.org/net/thor-ontology/> .
+
+<http://purl.org/net/thor-ontology/> rdf:type owl:Ontology ;
+                                      owl:versionIRI <http://purl.org/net/thor-ontology/0.3.10/> ;
+                                      owl:imports <http://www.w3.org/2004/02/skos/core> ,
+                                                  <http://www.w3.org/ns/lemon/ontolex> ;
+                                      dcterms:description """The objective of ThOR Ontology is to provide the vocabulary for building lexicons and thesauri for the Dutch healthcare domain. The OWL implementation of the ThOR Ontology is designed to provide an implementation artifact to structure a knowledge base (or knowledge graph), being suitable for Semantic Web and Linked Data applications.
 The ThOR Ontology uses concepts from SKOS [1], Ontolex [2], and Lexinfo [3], complementing them for accomplishing the purpose of being used for representing a lexicon that can be further transformed into a thesaurus using a specific tool built for this purpose, the ontolex2skos [4].
 ThOR stands for “Thesaurus and Ontology Representation”. The ThOR Project was a collaboration project that happened in 2021 between the Zorginstituut Nederland (ZIN) – the Dutch National Health Care Institute [5] – and the Free University of Bozen-Bolzano (Unibz) [6].
 For the source repository, see: https://github.com/unibz-core/thor/
@@ -55,190 +29,1000 @@ References
 [3] https://github.com/ontolex/lexinfo
 [4] https://github.com/unibz-core/ontolex2skos
 [5] https://english.zorginstituutnederland.nl/
-[6] https://unibz.it/</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal>0.2.6</Literal>
-    </Annotation>
-    <Declaration>
-        <Class IRI="Context"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Definition"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="PreferredSense"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="SemanticElement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="iStandard"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="owl:Class"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="broadMapping"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="closeMapping"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="exactMapping"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasContext"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="mappingProperty"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="narrowMapping"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="relatedMapping"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="PreferredSense"/>
-        <Class abbreviatedIRI="ontolex:LexicalSense"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="iStandard"/>
-        <Class IRI="Context"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="owl:Class"/>
-        <Class IRI="SemanticElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ontolex:LexicalConcept"/>
-        <Class IRI="SemanticElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ontolex:LexicalSense"/>
-        <Class IRI="SemanticElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
-        <Class IRI="Context"/>
-    </SubClassOf>
-    <DisjointClasses>
-        <Class abbreviatedIRI="owl:Class"/>
-        <Class abbreviatedIRI="ontolex:LexicalConcept"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="owl:Class"/>
-        <Class abbreviatedIRI="ontolex:LexicalSense"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class abbreviatedIRI="ontolex:LexicalConcept"/>
-        <Class abbreviatedIRI="ontolex:LexicalSense"/>
-    </DisjointClasses>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="broadMapping"/>
-        <ObjectProperty IRI="mappingProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="closeMapping"/>
-        <ObjectProperty IRI="mappingProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="exactMapping"/>
-        <ObjectProperty IRI="mappingProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="narrowMapping"/>
-        <ObjectProperty IRI="mappingProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="relatedMapping"/>
-        <ObjectProperty IRI="mappingProperty"/>
-    </SubObjectPropertyOf>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="broadMapping"/>
-        <ObjectProperty IRI="narrowMapping"/>
-    </InverseObjectProperties>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="exactMapping"/>
-    </SymmetricObjectProperty>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="relatedMapping"/>
-    </SymmetricObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="exactMapping"/>
-    </TransitiveObjectProperty>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasContext"/>
-        <Class abbreviatedIRI="ontolex:LexicalConcept"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="mappingProperty"/>
-        <Class IRI="SemanticElement"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="mappingProperty"/>
-        <Class IRI="SemanticElement"/>
-    </ObjectPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Context</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Context is used for specifying the use of senses for the better definition of them.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Definition</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">Used for reifications of the definitions of the semantic elements. With this class it is possible to relate the textual definitions with other properties, like the definition&apos;s source.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>PreferredSense</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">It is the Lexical Sense that is associated to the Lexical Entry that is going to became the skos:prefLabel for the generated Lexical Concept.
+[6] https://unibz.it/""" ;
+                                      dcterms:title "ThOR Ontology"@en ;
+                                      owl:versionInfo "0.3.10" .
 
-Each SynSet (set of all Lexical Senses that are synonymous between themselves) have exactly one Preferred Sense.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>broadMapping</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>closeMapping</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The property thor:closeMapping is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>exactMapping</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The property thor:exactMapping is used to link two semantic elements, indicating that the semantic elements can be used interchangeably across all information retrieval applications.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>hasContext</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">If a LexicalConcept has a isLexicalizedSense of a LexicalSense that has a lexinfo:domain relation to a Domain, than the LexicalConcept has a thor:domain relation to the same Domain.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>mappingProperty</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The thor:MappingProperties are thor:closeMapping, thor:exactMapping, thor:broadMapping, thor:narrowMapping and thor:relatedMapping. These properties are used to state mapping (alignment) links between any kind of semantic element (Lexical Concepts, Lexical Senses or Lexical Entries), where the links are inherent in the meaning of the linked elements.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>narrowMapping</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>relatedMapping</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">The property thor:relatedMapping is used to state an associative mapping link between two semantic elements.</Literal>
-    </AnnotationAssertion>
-</Ontology>
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+dcterms:abstract rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/available
+dcterms:available rdf:type owl:AnnotationProperty .
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
+###  http://purl.org/dc/terms/conformsTo
+dcterms:conformsTo rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/relation
+dcterms:relation rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/replaces
+dcterms:replaces rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty ;
+              rdfs:comment "The range of skos:altLabel is the class of RDF plain literals."@en ,
+                           "skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise disjoint properties."@en ;
+              rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+              rdfs:label "alternative label"@en ;
+              skos:definition "An alternative lexical label for a resource."@en ;
+              skos:example "Acronyms, abbreviations, spelling variants, and irregular plural/singular forms may be included among the alternative labels for a concept. Mis-spelled terms are normally included as hidden labels (see skos:hiddenLabel)."@en ;
+              rdfs:subPropertyOf rdfs:label .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+skos:changeNote rdf:type owl:AnnotationProperty ;
+                rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+                rdfs:label "change note"@en ;
+                skos:definition "A note about a modification to a concept."@en ;
+                rdfs:subPropertyOf skos:note .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty ;
+                rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+                rdfs:label "definition"@en ;
+                skos:definition "A statement or formal explanation of the meaning of a concept."@en ;
+                rdfs:subPropertyOf skos:note .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:AnnotationProperty ;
+                   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+                   rdfs:label "editorial note"@en ;
+                   skos:definition "A note for an editor, translator or maintainer of the vocabulary."@en ;
+                   rdfs:subPropertyOf skos:note .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty ;
+             rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+             rdfs:label "example"@en ;
+             skos:definition "An example of the use of a concept."@en ;
+             rdfs:subPropertyOf skos:note .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty ;
+                 rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+                 rdfs:label "history note"@en ;
+                 skos:definition "A note about the past state/use/meaning of a concept."@en ;
+                 rdfs:subPropertyOf skos:note .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty ;
+          rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+          rdfs:label "note"@en ;
+          skos:definition "A general note, for any purpose."@en ;
+          skos:scopeNote "This property may be used directly, or as a super-property for more specific note types."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty ;
+               rdfs:comment "A resource has no more than one value of skos:prefLabel per language tag, and no more than one value of skos:prefLabel without language tag."@en ,
+                            "The range of skos:prefLabel is the class of RDF plain literals."@en ,
+                            """skos:prefLabel, skos:altLabel and skos:hiddenLabel are pairwise
+      disjoint properties."""@en ;
+               rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+               rdfs:label "preferred label"@en ;
+               skos:definition "The preferred lexical label for a resource, in a given language."@en ;
+               rdfs:subPropertyOf rdfs:label .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty ;
+               rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+               rdfs:label "scope note"@en ;
+               skos:definition "A note that helps to clarify the meaning and/or the use of a concept."@en ;
+               rdfs:subPropertyOf skos:note .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/net/thor-ontology/broadMapping
+thor:broadMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  owl:inverseOf thor:narrowMapping ;
+                  rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/closeMapping
+thor:closeMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  rdfs:comment "The property thor:closeMapping is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications."^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/exactMapping
+thor:exactMapping rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf thor:mappingProperty ;
+                  rdf:type owl:SymmetricProperty ,
+                           owl:TransitiveProperty ;
+                  rdfs:comment "The property thor:exactMapping is used to link two semantic elements, indicating that the semantic elements can be used interchangeably across all information retrieval applications."^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/hasContext
+thor:hasContext rdf:type owl:ObjectProperty ;
+                rdfs:domain ontolex:LexicalConcept ;
+                rdfs:range thor:Context ;
+                rdfs:comment "If a LexicalConcept has a isLexicalizedSense of a LexicalSense that has a lexinfo:domain relation to a Domain, than the LexicalConcept has a thor:domain relation to the same Domain."^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/mappingProperty
+thor:mappingProperty rdf:type owl:ObjectProperty ;
+                     rdfs:domain thor:SemanticElement ;
+                     rdfs:range thor:SemanticElement ;
+                     rdfs:comment "The thor:MappingProperties are thor:closeMapping, thor:exactMapping, thor:broadMapping, thor:narrowMapping and thor:relatedMapping. These properties are used to state mapping (alignment) links between any kind of semantic element (Lexical Concepts, Lexical Senses or Lexical Entries), where the links are inherent in the meaning of the linked elements."^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/narrowMapping
+thor:narrowMapping rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf thor:mappingProperty ;
+                   rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/relatedMapping
+thor:relatedMapping rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf thor:mappingProperty ;
+                    rdf:type owl:SymmetricProperty ;
+                    rdfs:comment "The property thor:relatedMapping is used to state an associative mapping link between two semantic elements."^^rdf:langString .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#contractionFor
+lexinfo:contractionFor rdf:type owl:ObjectProperty ;
+                       owl:inverseOf lexinfo:fullFormFor ;
+                       rdfs:domain ontolex:LexicalEntry ;
+                       rdfs:range ontolex:LexicalEntry ;
+                       rdfs:comment "The full form that corresponds to a contracted form."@en ;
+                       rdfs:label "contraction for"@en ;
+                       owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#contractionFor> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#domain
+lexinfo:domain rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf ontolex:usage ;
+               rdfs:domain ontolex:LexicalSense ;
+               rdfs:range thor:Context ;
+               rdfs:comment "usage marker which identifies the specialized field of knowledge in which a lexical unit is mainly used"@en ;
+               rdfs:label "domain"@en .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#fullFormFor
+lexinfo:fullFormFor rdf:type owl:ObjectProperty ;
+                    rdfs:domain ontolex:LexicalEntry ;
+                    rdfs:range ontolex:LexicalEntry ;
+                    rdfs:comment "A linking element used to identify a relation between any full form of a term or lexical unit and its abbreviated form."@en ;
+                    rdfs:label "full form for"@en ;
+                    owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#fullFormFor> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#homograph
+lexinfo:homograph rdf:type owl:ObjectProperty ,
+                           owl:SymmetricProperty ,
+                           owl:TransitiveProperty ;
+                  rdfs:domain ontolex:LexicalEntry ;
+                  rdfs:range ontolex:LexicalEntry ;
+                  rdfs:comment "A word that is spelled like another, but that has a different pronunciation, meaning, and/or origin. // Word that is written like another, but that has a different pronunciation, meaning, and/or origin."@en ;
+                  rdfs:label "homograph"@en ;
+                  owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#homograph> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym
+lexinfo:hypernym rdf:type owl:ObjectProperty ;
+                 owl:inverseOf lexinfo:hyponym ;
+                 rdf:type owl:TransitiveProperty ;
+                 rdfs:domain ontolex:LexicalSense ;
+                 rdfs:range ontolex:LexicalSense ;
+                 rdfs:label "hypernym"@en ;
+                 owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#hypernym> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym
+lexinfo:hyponym rdf:type owl:ObjectProperty ,
+                         owl:TransitiveProperty ;
+                rdfs:domain ontolex:LexicalSense ;
+                rdfs:range ontolex:LexicalSense ;
+                rdfs:label "hyponym"@en ;
+                owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#hyponym> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#relatedTerm
+lexinfo:relatedTerm rdf:type owl:ObjectProperty ,
+                             owl:SymmetricProperty ;
+                    rdfs:domain ontolex:LexicalSense ;
+                    rdfs:range ontolex:LexicalSense ;
+                    rdfs:comment "A term connected to another term by a coordinate or associative relation."@en ;
+                    rdfs:label "related term"@en ;
+                    owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#relatedTerm> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#synonym
+lexinfo:synonym rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty ,
+                         owl:TransitiveProperty ;
+                rdfs:domain ontolex:LexicalSense ;
+                rdfs:range ontolex:LexicalSense ;
+                rdfs:label "synonym"@en ;
+                owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#synonym> .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+skos:broader rdf:type owl:ObjectProperty ;
+             owl:inverseOf skos:narrower ;
+             rdfs:domain ontolex:LexicalConcept ;
+             rdfs:range ontolex:LexicalConcept ;
+             rdfs:comment "Broader concepts are typically rendered as parents in a concept hierarchy (tree)."@en ;
+             rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+             rdfs:label "has broader"@en ;
+             skos:definition "Relates a concept to a concept that is more general in meaning."@en ;
+             skos:scopeNote "By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#hasTopConcept
+skos:hasTopConcept rdf:type owl:ObjectProperty ;
+                   owl:inverseOf skos:topConceptOf ;
+                   rdfs:domain skos:ConceptScheme ;
+                   rdfs:range skos:Concept ;
+                   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+                   rdfs:label "has top concept"@en ;
+                   skos:definition "Relates, by convention, a concept scheme to a concept which is topmost in the broader/narrower concept hierarchies for that scheme, providing an entry point to these hierarchies."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:ObjectProperty ;
+              rdfs:domain skos:Concept ;
+              rdfs:range skos:ConceptScheme ;
+              rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+              rdfs:label "in scheme"@en ,
+                         "is in scheme"@en ;
+              skos:definition "Relates a resource (for example a concept) to a concept scheme in which it is included."@en ;
+              skos:scopeNote "A concept may be a member of more than one concept scheme."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#narrower
+skos:narrower rdf:type owl:ObjectProperty ;
+              rdfs:domain ontolex:LexicalConcept ;
+              rdfs:range ontolex:LexicalConcept ;
+              rdfs:comment "Narrower concepts are typically rendered as children in a concept hierarchy (tree)."@en ;
+              rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+              rdfs:label "has narrower"@en ;
+              skos:definition "Relates a concept to a concept that is more specific in meaning."@en ;
+              skos:scopeNote "By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+skos:related rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             rdfs:domain ontolex:LexicalConcept ;
+             rdfs:range ontolex:LexicalConcept ;
+             rdfs:comment "skos:related is disjoint with skos:broaderTransitive"@en ;
+             rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+             rdfs:label "has related"@en ;
+             skos:definition "Relates a concept to a concept with which there is an associative semantic relationship."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#topConceptOf
+skos:topConceptOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf skos:inScheme ;
+                  rdfs:domain skos:Concept ;
+                  rdfs:range skos:ConceptScheme ;
+                  rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+                  rdfs:label "is top concept in scheme"@en ;
+                  skos:definition "Relates a concept to the concept scheme that it is a top level concept of."@en .
+
+
+###  http://www.w3.org/ns/lemon/lime#entry
+lime:entry rdf:type owl:ObjectProperty ;
+           rdfs:domain lime:Lexicon ;
+           rdfs:range ontolex:LexicalEntry ;
+           rdfs:comment "The 'entry' property relates a lexicon to one of the lexical entries contained in it."@en ,
+                        "Свойство 'запись' связывает лексикон с одной из содержащихся в нем словарных единиц."@ru ;
+           rdfs:isDefinedBy "http://www.w3.org/ns/lemon/lime" ;
+           rdfs:label "Eintrag"@de ,
+                      "Item"@nl ,
+                      "entrada"@es ,
+                      "entrada"@pt ,
+                      "entrata"@it ,
+                      "entry"@en ,
+                      "entrée"@fr ,
+                      "ingång"@sv ,
+                      "inskrywing"@af ,
+                      "înregistrare"@ro ,
+                      "запись"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#canonicalForm
+ontolex:canonicalForm rdf:type owl:ObjectProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain ontolex:LexicalEntry ;
+                      rdfs:range ontolex:Form ;
+                      rdfs:comment "The 'canonical form' property relates a lexical entry to its canoncical or dictionary form. This usually indicates the \"lemma\" form of a lexical entry. "@en ,
+                                   "Свойство 'каноническая форма' связывает словарную единицу с ее канонической или словарной формой. Она обычно обозначает \"лемму\" словарной единицы."@ru ;
+                      rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                      rdfs:label "canonical form"@en ,
+                                 "canonieke vorm"@nl ,
+                                 "forma canonica"@it ,
+                                 "forma canonica"@pt ,
+                                 "forma canónica"@es ,
+                                 "forme canonique"@fr ,
+                                 "formă canonică"@ro ,
+                                 "kanoniese vorm"@af ,
+                                 "kanonische Form"@de ,
+                                 "kanonisk form "@sv ,
+                                 "каноническая форма"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#concept
+ontolex:concept rdf:type owl:ObjectProperty ;
+                owl:inverseOf ontolex:isConceptOf ;
+                rdfs:domain rdfs:Resource ;
+                rdfs:range ontolex:LexicalConcept ;
+                rdfs:comment "The 'concept' property relates an ontological entity to a lexical concept that represents the corresponding meaning."@en ,
+                             "Свойство 'понятие' связывает сущность в онтологии с лексическим понятием, которое представляет соответствующее значение."@ru ;
+                rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                rdfs:label "Konzept"@de ,
+                           "begrepp"@sv ,
+                           "begrip"@nl ,
+                           "conceito"@pt ,
+                           "concept"@en ,
+                           "concept"@fr ,
+                           "concept"@ro ,
+                           "concepto"@es ,
+                           "concetto"@it ,
+                           "konsep"@af ,
+                           "понятие"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#denotes
+ontolex:denotes rdf:type owl:ObjectProperty ;
+                owl:inverseOf ontolex:isDenotedBy ;
+                rdfs:domain ontolex:LexicalEntry ;
+                rdfs:range rdfs:Resource ;
+                owl:propertyChainAxiom ( ontolex:sense
+                                         ontolex:reference
+                                       ) ;
+                rdfs:comment "The 'denotes' property relates a lexical entry to a predicate in a given ontology that represents its meaning and has some denotational or model-theoretic semantics. "@en ,
+                             "Свойство 'обозначает' связывает словарную единицу с предикатом в онтологии, который представляет ее значение и обладает денотативной или теоретико-модельной семантикой."@ru ;
+                rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                rdfs:label "betecknar"@sv ,
+                           "bezeichnet"@de ,
+                           "denota"@es ,
+                           "denota"@it ,
+                           "denota"@pt ,
+                           "denotes"@en ,
+                           "denotă"@ro ,
+                           "dui aan"@af ,
+                           "duidet aan"@nl ,
+                           "dénote"@fr ,
+                           "обозначает"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#evokes
+ontolex:evokes rdf:type owl:ObjectProperty ;
+               owl:inverseOf ontolex:isEvokedBy ;
+               rdfs:domain ontolex:LexicalEntry ;
+               rdfs:range ontolex:LexicalConcept ;
+               owl:propertyChainAxiom ( ontolex:sense
+                                        ontolex:isLexicalizedSenseOf
+                                      ) ;
+               rdfs:comment "The 'evokes' property relates a lexical entry to one of the lexical concepts it evokes, i.e. the mental concept that speakers of a language might associate when hearing the lexical entry."@en ,
+                            "Свойство 'порождает' связывает словарную единицу с одним из лексических понятий, которую она порождает, то есть мыслительное понятие, которое возникает в сознании говорящих, когда они слышат данную словарную единицу."@ru ;
+               rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+               rdfs:label "evoca"@es ,
+                          "evoca"@it ,
+                          "evoca"@pt ,
+                          "evocă"@ro ,
+                          "evokes"@en ,
+                          "framkallar"@sv ,
+                          "lokt uit"@nl ,
+                          "roep op"@af ,
+                          "ruft hervor"@de ,
+                          "évoque"@fr ,
+                          "порождает"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isConceptOf
+ontolex:isConceptOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain ontolex:LexicalConcept ;
+                    rdfs:range rdfs:Resource ;
+                    rdfs:comment "This property formalizes the meaning of a Lexical Concept by linking it to a particular ontological meaning."@en ,
+                                 "Это свойство формализует значение 'Лексического Понятия', связывая его с отдельным значением в онтологии."@ru ;
+                    rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                    rdfs:label "es concepto de"@es ,
+                               "est un concept pour "@fr ,
+                               "este concept a(l)"@ro ,
+                               "is concept of"@en ,
+                               "is concept van"@nl ,
+                               "is konsep van"@af ,
+                               "ist Konzept von"@de ,
+                               "är begrepp för"@sv ,
+                               "è concetto di "@it ,
+                               "é conceito de"@pt ,
+                               "является понятием"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isDenotedBy
+ontolex:isDenotedBy rdf:type owl:ObjectProperty ;
+                    rdfs:domain rdfs:Resource ;
+                    rdfs:range ontolex:LexicalEntry ;
+                    rdfs:comment "The object property isDenotedBy is the inverse of the object property denotes."@en ,
+                                 "Свойство объекта 'обозначается' является обратным к свойству объекта 'обозначает'."@ru ;
+                    rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                    rdfs:label "betecknas av"@sv ,
+                               "es denotado por"@es ,
+                               "est dénoté par"@fr ,
+                               "este denotat cu"@ro ,
+                               "is denoted by"@en ,
+                               "wird bezeichnet von"@de ,
+                               "word aangedui deur"@af ,
+                               "wordt aangeduidet door"@nl ,
+                               "è denotato da"@it ,
+                               "é denotado por"@pt ,
+                               "обозначается"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isEvokedBy
+ontolex:isEvokedBy rdf:type owl:ObjectProperty ;
+                   rdfs:domain ontolex:LexicalConcept ;
+                   rdfs:range ontolex:LexicalEntry ;
+                   rdfs:comment "The inverse relation to evokes."@en ,
+                                "Отношение обратное к 'порождает'."@ru ;
+                   rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                   rdfs:label "es evocado por"@es ,
+                              "est évoqué par"@fr ,
+                              "este evocat de"@ro ,
+                              "framkallas av "@sv ,
+                              "is evoked by"@en ,
+                              "wird hervorgerufen von"@de ,
+                              "word opgeroep deur"@af ,
+                              "wordt uitgelokt door"@nl ,
+                              "è evocato da"@it ,
+                              "порождается"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf
+ontolex:isLexicalizedSenseOf rdf:type owl:ObjectProperty ;
+                             owl:inverseOf ontolex:lexicalizedSense ;
+                             rdfs:domain ontolex:LexicalSense ;
+                             rdfs:range ontolex:LexicalConcept ;
+                             rdfs:comment "The object property isLexicalizedSenseOf is the inverse property of lexicalized sense."@en ,
+                                          "Свойство объекта 'является лексикализованным смыслом' представляет собой свойство, обратное к свойству 'лексикализованный смысл'."@ru ;
+                             rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                             rdfs:label "es l'acepción lexicalizado de"@es ,
+                                        "est le sens lexicalisé de"@fr ,
+                                        "este sens lexicalizat de"@ro ,
+                                        "is geleksikaliseerde sin van"@af ,
+                                        "is lexicalized sense of"@en ,
+                                        "is lexikaal zin van"@nl ,
+                                        "ist lexikalisierter Sinn von"@de ,
+                                        "är lexikaliserad betydelse för"@sv ,
+                                        "è il senso lessicalizzato di"@it ,
+                                        "является лексикализованным смыслом"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isReferenceOf
+ontolex:isReferenceOf rdf:type owl:ObjectProperty ;
+                      owl:inverseOf ontolex:reference ;
+                      rdf:type owl:InverseFunctionalProperty ;
+                      rdfs:domain rdfs:Resource ;
+                      rdfs:range ontolex:LexicalSense ;
+                      rdfs:comment "The object property isReferenceOf is the inverse property of reference."@en ,
+                                   "Свойство объекта 'является референцией' представляет собой свойство, обратное к свойству 'референция'."@ru ;
+                      rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                      rdfs:label "es referencia de"@es ,
+                                 "est référence de"@fr ,
+                                 "este referință a(l)"@ro ,
+                                 "is reference of"@en ,
+                                 "is referentie van"@nl ,
+                                 "is verwysing van"@af ,
+                                 "ist Referenz von"@de ,
+                                 "är referens för"@sv ,
+                                 "è riferimento di"@it ,
+                                 "é referência de"@pt ,
+                                 "является референцией"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isSenseOf
+ontolex:isSenseOf rdf:type owl:ObjectProperty ;
+                  owl:inverseOf ontolex:sense ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain ontolex:LexicalSense ;
+                  rdfs:range ontolex:LexicalEntry ;
+                  rdfs:comment "The property isSenseOf is the inverse property of sense."@en ,
+                               "Свойство 'является смыслом' представляет собой свойство, обратное к свойству 'смысл'."@ru ;
+                  rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                  rdfs:label "es acepción de"@es ,
+                             "est signification de"@fr ,
+                             "este sens a(l)"@ro ,
+                             "is sense of"@en ,
+                             "is sin van"@af ,
+                             "is zin van"@nl ,
+                             "ist Sinn von"@de ,
+                             "är betydelse för"@sv ,
+                             "è il senso di"@it ,
+                             "é sentido de"@pt ,
+                             "является смыслом"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#lexicalizedSense
+ontolex:lexicalizedSense rdf:type owl:ObjectProperty ;
+                         rdfs:domain ontolex:LexicalConcept ;
+                         rdfs:range ontolex:LexicalSense ;
+                         rdfs:comment "The 'lexicalized sense' property relates a lexical concept to a corresponding lexical sense that lexicalizes the concept."@en ,
+                                      "Свойство 'лексикализованный смысл' связывает лексическое понятие с соответствующим лексическим смыслом, который лексикализует понятие."@ru ;
+                         rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                         rdfs:label "acepción lexicalizada"@es ,
+                                    "geleksikaliseerde Sin"@af ,
+                                    "lexicalized sense"@en ,
+                                    "lexikaal zin"@nl ,
+                                    "lexikaliserad betydelse"@sv ,
+                                    "lexikalisierter Sinn"@de ,
+                                    "sens lexicalizat"@ro ,
+                                    "senso lessicalizzato"@it ,
+                                    "signification lexicalisé"@fr ,
+                                    "лексикализованный смысл"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#reference
+ontolex:reference rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain ontolex:LexicalSense ;
+                  rdfs:range rdfs:Resource ;
+                  rdfs:comment "The 'reference' property relates a lexical sense to an ontological predicate that represents the denotation of the corresponding lexical entry. "@en ,
+                               "Свойство 'референция' соотносит лексический смысл с предикатом в онтологии, который уточняет значение денотата (соответствующей словарной единицы)."@ru ;
+                  rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                  rdfs:label "Referenz"@de ,
+                             "reference"@en ,
+                             "referencia"@es ,
+                             "referens"@sv ,
+                             "referință"@ro ,
+                             "referntie"@nl ,
+                             "referência"@pt ,
+                             "riferimento"@it ,
+                             "référence"@fr ,
+                             "verwysing"@af ,
+                             "референция"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#sense
+ontolex:sense rdf:type owl:ObjectProperty ,
+                       owl:InverseFunctionalProperty ;
+              rdfs:domain ontolex:LexicalEntry ;
+              rdfs:range ontolex:LexicalSense ;
+              rdfs:comment "The 'sense' property relates a lexical entry to one of its lexical senses. "@en ,
+                           "Свойство 'смысл' связывает словарную единицу с одним из ее лексических смыслов."@ru ;
+              rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+              rdfs:label "Sinn"@de ,
+                         "acepción"@es ,
+                         "betydelse"@sv ,
+                         "sens"@ro ,
+                         "sense"@en ,
+                         "senso"@it ,
+                         "sentido"@pt ,
+                         "signification"@fr ,
+                         "sinne"@af ,
+                         "zin"@nl ,
+                         "смысл"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#usage
+ontolex:usage rdf:type owl:ObjectProperty ;
+              rdfs:domain ontolex:LexicalSense ;
+              rdfs:range rdfs:Resource ;
+              rdfs:comment "The 'usage' property indicates usage conditions or pragmatic implications when using the lexical entry to refer to the given ontological meaning."@en ,
+                           "Свойство 'употребление' обозначает условия использования или прагматическое значение при употреблении словарной единицы для соотнесения с определенным значением в онтологии."@ru ;
+              rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+              rdfs:label "Gebrauch"@de ,
+                         "gebruik"@nl ,
+                         "usage"@en ,
+                         "usage"@fr ,
+                         "uso"@es ,
+                         "uso"@it ,
+                         "употребление"@ru .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+foaf:homepage rdf:type owl:ObjectProperty ,
+                       owl:InverseFunctionalProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( ontolex:LexicalConcept
+                                          ontolex:LexicalSense
+                                        )
+                          ] ;
+              rdfs:comment "A homepage for some thing." ;
+              rdfs:isDefinedBy foaf: ;
+              rdfs:label "homepage" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/ns/lemon/lime#language
+lime:language rdf:type owl:DatatypeProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( skos:ConceptScheme
+                                          lime:Lexicon
+                                          ontolex:LexicalEntry
+                                        )
+                          ] ;
+              rdfs:range xsd:language ;
+              rdfs:comment "The  'language' property indicates the language of a lexicon, a lexical entry, a concept set or a lexicalization set."@en ,
+                           "Свойство 'язык' указывает язык лексикона, словарной единицы, набора понятий или набора лексикализаций."@ru ;
+              rdfs:isDefinedBy "http://www.w3.org/ns/lemon/lime" ;
+              rdfs:label "Sprache"@de ,
+                         "idioma"@pt ,
+                         "language"@en ,
+                         "langue"@fr ,
+                         "lengua"@es ,
+                         "limbă"@ro ,
+                         "lingua"@it ,
+                         "språk"@sv ,
+                         "taal"@af ,
+                         "taal"@nl ,
+                         "язык"@ru .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/terms/Agent
+dcterms:Agent rdf:type owl:Class ;
+              rdfs:comment "A resource that acts or has the power to act."@en ;
+              rdfs:isDefinedBy dcterms: ;
+              rdfs:label "Agent"@en .
+
+
+###  http://purl.org/net/thor-ontology/Context
+thor:Context rdf:type owl:Class ;
+             rdfs:comment "Context is used for specifying the use of senses for the better definition of them."^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/Definition
+thor:Definition rdf:type owl:Class ;
+                rdfs:comment "Used for reifications of the definitions of the semantic elements. With this class it is possible to relate the textual definitions with other properties, like the definition's source."^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/PreferredSense
+thor:PreferredSense rdf:type owl:Class ;
+                    rdfs:subClassOf ontolex:LexicalSense ;
+                    rdfs:comment """It is the Lexical Sense that is associated to the Lexical Entry that is going to became the skos:prefLabel for the generated Lexical Concept.
+
+Each SynSet (set of all Lexical Senses that are synonymous between themselves) have exactly one Preferred Sense."""^^rdf:langString .
+
+
+###  http://purl.org/net/thor-ontology/SemanticElement
+thor:SemanticElement rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:unionOf ( rdfs:Resource
+                                                         ontolex:LexicalConcept
+                                                         ontolex:LexicalSense
+                                                       )
+                                         ] .
+
+
+###  http://purl.org/net/thor-ontology/iStandard
+thor:iStandard rdf:type owl:Class ;
+               rdfs:subClassOf thor:Context .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#Adjective
+lexinfo:Adjective rdf:type owl:Class ;
+                  rdfs:subClassOf ontolex:Word ;
+                  rdfs:label "adjective"@en ;
+                  owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#Adjective> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#Adverb
+lexinfo:Adverb rdf:type owl:Class ;
+               rdfs:subClassOf ontolex:Word ;
+               rdfs:label "adverb"@en ;
+               owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#Adverb> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#Noun
+lexinfo:Noun rdf:type owl:Class ;
+             rdfs:subClassOf ontolex:Word ;
+             rdfs:label "Substantiv"@de ,
+                        "noun"@en ;
+             owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#Noun> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#ProperNoun
+lexinfo:ProperNoun rdf:type owl:Class ;
+                   rdfs:subClassOf lexinfo:Noun ;
+                   rdfs:label "proper noun"@en ;
+                   owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#ProperNoun> .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#Verb
+lexinfo:Verb rdf:type owl:Class ;
+             rdfs:subClassOf ontolex:Word ;
+             rdfs:label "verb"@en ;
+             owl:priorVersion <http://www.lexinfo.net/ontology/2.0/lexinfo#Verb> .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class ;
+              rdfs:subClassOf thor:SemanticElement .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class ;
+             owl:disjointWith skos:ConceptScheme ;
+             rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+             rdfs:label "Concept"@en ,
+                        "concept"@en ;
+             skos:definition "An idea or notion; a unit of thought."@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+skos:ConceptScheme rdf:type owl:Class ;
+                   rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+                   rdfs:label "Concept Scheme"@en ,
+                              "concept scheme"@en ;
+                   skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;
+                   skos:example "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies."@en ;
+                   skos:scopeNote "A concept scheme may be defined to include concepts from different sources."@en .
+
+
+###  http://www.w3.org/ns/lemon/lime#Lexicon
+lime:Lexicon rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty lime:entry ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass ontolex:LexicalEntry
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty lime:language ;
+                               owl:cardinality "1"^^xsd:nonNegativeInteger
+                             ] ;
+             rdfs:comment "A lexicon represents a collection of lexical entries for a particular language or domain."@en ,
+                          "Лексикон представляет собой набор словарных единиц для определенного языка или домена."@ru ;
+             rdfs:isDefinedBy "http://www.w3.org/ns/lemon/lime" ;
+             rdfs:label "Lessico"@it ,
+                        "Lexicon"@nl ,
+                        "Lexikon"@de ,
+                        "Lexique"@fr ,
+                        "leksikon"@af ,
+                        "lexicon"@en ,
+                        "lexicon"@ro ,
+                        "lexicón"@es ,
+                        "lexikon"@sv ,
+                        "лексикон"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#Form
+ontolex:Form rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty ontolex:writtenRep ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange rdf:langString
+                             ] ;
+             rdfs:comment "'Форма' представляет одну грамматическую реализацию словарной единицы."@ru ,
+                          "A form represents one grammatical realization of a lexical entry."@en ;
+             rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+             rdfs:label "Form"@de ,
+                        "Forma"@pt ,
+                        "form"@en ,
+                        "form"@sv ,
+                        "forma"@es ,
+                        "forma"@it ,
+                        "forme"@fr ,
+                        "formă"@ro ,
+                        "vorm"@af ,
+                        "vorm"@nl ,
+                        "форма"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalConcept
+ontolex:LexicalConcept rdf:type owl:Class ;
+                       rdfs:subClassOf thor:SemanticElement ,
+                                       skos:Concept ;
+                       owl:disjointWith ontolex:LexicalSense ;
+                       rdfs:comment "'Лексическое понятие' представляет элемент абстрактного мышления, понятие или единицу мысли, которая может быть лексикализована определенным набором смыслов."@ru ,
+                                    "A lexical concept represents a mental abstraction, concept or unit of thought that embodies the meaning of one or more lexical entries."@en ;
+                       rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                       rdfs:label "conceito léxico"@pt ,
+                                  "concept lexical"@fr ,
+                                  "concept lexical"@ro ,
+                                  "concepto lexicalizado"@es ,
+                                  "concetto lessicale"@it ,
+                                  "leksikale konsep"@af ,
+                                  "lexical concept"@en ,
+                                  "lexikaal concept"@nl ,
+                                  "lexikalisches Konzept"@de ,
+                                  "lexikaliskt begrepp"@sv ,
+                                  "лексическое понятие"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalEntry
+ontolex:LexicalEntry rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:unionOf ( ontolex:MultiWordExpression
+                                                         ontolex:Word
+                                                       )
+                                         ] ;
+                     rdfs:subClassOf owl:Thing ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty ontolex:canonicalForm ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ontolex:Form
+                                     ] ;
+                     rdfs:comment "'Словарная единица' представляет собой единицу анализа словаря, которая состоит из совокупности грамматически связанных форм и совокупности основных значений, ассоциирующихся со всеми этими формами. 'Словарная единица' - это слово, словосочетание или аффикс одной части речи, морфологической модели, этимологии и набора значений."@ru ,
+                                  "A lexical entry represents a unit of analysis of the lexicon that consists of a set of forms that are grammatically related and a set of base meanings that are associated with all of these forms. Thus, a lexical entry is a word, multiword expression or affix with a single part-of-speech, morphological pattern, etymology and set of senses."@en ;
+                     rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                     rdfs:label "Lexikoneintrag"@de ,
+                                "entrada léxica"@es ,
+                                "entrata lessicale"@it ,
+                                "entrée lexicale"@fr ,
+                                "leksikale inskrywing"@af ,
+                                "lexical entry"@en ,
+                                "lexikaal item"@nl ,
+                                "lexikoningång"@sv ,
+                                "înregistrare lexicală"@ro ,
+                                "словарная единица"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalSense
+ontolex:LexicalSense rdf:type owl:Class ;
+                     rdfs:subClassOf thor:SemanticElement ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty ontolex:isSenseOf ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ontolex:LexicalEntry
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty ontolex:reference ;
+                                       owl:cardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     rdfs:comment "'Лексический смысл' обозначает лексическое значение словарной единицы, когда оно понимается как относящееся к соответствующему элементу онтологии. 'Лексический смысл' представляет собой овеществление пары, состоящей из однозначно определяемой словарной единицы и однозначно определяемой сущности отнологии, к которой относится данный лексический смысл. Связь между словарной единицей и сущностью в онтологии посредством объекта 'Лексический Смысл' подразумевает, что словарная статья может быть использована для отсылки к соответствующей сущности в онтологии."@ru ,
+                                  "A lexical sense represents the lexical meaning of a lexical entry when interpreted as referring to the corresponding ontology element. A lexical sense thus represents a reification of a pair of a uniquely determined lexical entry and a uniquely determined ontology entity it refers to. A link between a lexical entry and an ontology entity via a Lexical Sense object implies that the lexical entry can be used to refer to the ontology entity in question."@en ;
+                     rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                     rdfs:label "acepción léxica"@es ,
+                                "leksikale sin"@af ,
+                                "lexical sense"@en ,
+                                "lexikaal zin"@nl ,
+                                "lexikalischer Sinn"@de ,
+                                "lexikonbetydelse"@sv ,
+                                "sens lexical"@ro ,
+                                "senso lessicale"@it ,
+                                "signification lexicale"@fr ,
+                                "лексический смысл"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#MultiWordExpression
+ontolex:MultiWordExpression rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Class ;
+                                                  owl:unionOf ( lexinfo:Adjective
+                                                                lexinfo:Adverb
+                                                                lexinfo:Noun
+                                                                lexinfo:Verb
+                                                              )
+                                                ] ;
+                            rdfs:subClassOf ontolex:LexicalEntry ;
+                            owl:disjointWith ontolex:Word ;
+                            rdfs:comment "'Словосочетание' - это словарная единица, состоящая из двух или более слов."@ru ,
+                                         "A multiword expression is a lexical entry that consists of two or more words."@en ;
+                            rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+                            rdfs:label "Mehrwortausdruck"@de ,
+                                       "espressione di gruppi di parole"@it ,
+                                       "expresie din mai multe cuvinte"@ro ,
+                                       "expresión multipalabra"@es ,
+                                       "expression à mots multiples"@fr ,
+                                       "flerordsuttryck"@sv ,
+                                       "multi-word expression"@en ,
+                                       "multiwoorduitdrukking"@af ,
+                                       "mutliwoorduitdrukking"@nl ,
+                                       "словосочетание"@ru .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#Word
+ontolex:Word rdf:type owl:Class ;
+             rdfs:subClassOf ontolex:LexicalEntry ;
+             rdfs:comment "'Слово' - это словарная единица, представяющая собой единичную реализацию лексемы."@ru ,
+                          "A word is a lexical entry that consists of a single token."@en ;
+             rdfs:isDefinedBy <http://www.w3.org/ns/lemon/ontolex> ;
+             rdfs:label "Wort"@de ,
+                        "cuvânt"@ro ,
+                        "mot"@fr ,
+                        "ord"@sv ,
+                        "palabra"@es ,
+                        "parola"@it ,
+                        "woord"@af ,
+                        "woord"@nl ,
+                        "word"@en ,
+                        "слово"@ru .
+
+
+###  http://xmlns.com/foaf/0.1/Group
+foaf:Group rdf:type owl:Class ;
+           rdfs:subClassOf thor:Context .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class ;
+                  rdfs:subClassOf thor:Context .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+foaf:Project rdf:type owl:Class ;
+             rdfs:subClassOf thor:Context .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( thor:iStandard
+                foaf:Group
+                foaf:Organization
+                foaf:Project
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
