@@ -16,22 +16,34 @@
 @base <http://purl.org/net/thor-ontology/> .
 
 <http://purl.org/net/thor-ontology/> rdf:type owl:Ontology ;
-                                      owl:versionIRI <http://purl.org/net/thor-ontology/0.3.10/> ;
+                                      owl:versionIRI <http://purl.org/net/thor-ontology/0.3.11/> ;
                                       owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                                   <http://www.w3.org/ns/lemon/ontolex> ;
-                                      dcterms:description """The objective of ThOR Ontology is to provide the vocabulary for building lexicons and thesauri for the Dutch healthcare domain. The OWL implementation of the ThOR Ontology is designed to provide an implementation artifact to structure a knowledge base (or knowledge graph), being suitable for Semantic Web and Linked Data applications.
-The ThOR Ontology uses concepts from SKOS [1], Ontolex [2], and Lexinfo [3], complementing them for accomplishing the purpose of being used for representing a lexicon that can be further transformed into a thesaurus using a specific tool built for this purpose, the ontolex2skos [4].
-ThOR stands for “Thesaurus and Ontology Representation”. The ThOR Project was a collaboration project that happened in 2021 between the Zorginstituut Nederland (ZIN) – the Dutch National Health Care Institute [5] – and the Free University of Bozen-Bolzano (Unibz) [6].
-For the source repository, see: https://github.com/unibz-core/thor/
-References
-[1] https://www.w3.org/TR/skos-reference/
-[2] https://www.w3.org/2016/05/ontolex/
-[3] https://github.com/ontolex/lexinfo
-[4] https://github.com/unibz-core/ontolex2skos
-[5] https://english.zorginstituutnederland.nl/
-[6] https://unibz.it/""" ;
+                                      dcterms:description """# ThOR Ontology
+
+The objective of **ThOR Ontology** is to provide the vocabulary for building lexicons and thesauri for the Dutch healthcare domain. The OWL implementation of the ThOR Ontology is designed to provide an implementation artifact to structure a knowledge base (or knowledge graph), being suitable for Semantic Web and Linked Data applications.
+
+The ThOR Ontology uses concepts from [SKOS](https://www.w3.org/TR/skos-reference/), [Ontolex](https://www.w3.org/2016/05/ontolex/), and [Lexinfo](https://github.com/ontolex/lexinfo), complementing them for accomplishing the purpose of being used for representing a lexicon that can be further transformed into a thesaurus using a specific tool built for this purpose, the [ontolex2skos](https://github.com/unibz-core/ontolex2skos).
+
+ThOR stands for “Thesaurus and Ontology Representation”. The ThOR Project was a collaboration project that happened in 2021 between the [*Zorginstituut Nederland* (ZIN)](https://english.zorginstituutnederland.nl/) – the Dutch National Health Care Institute – and the [Conceptual and Cognitive Modeling Research Group (CORE)](https://www.inf.unibz.it/krdb/core/) from the [Free University of Bozen-Bolzano (Unibz)](https://unibz.it/).
+
+For the source repository, see: <https://github.com/unibz-core/thor/>
+
+# Developers
+
+## Unibz Members
+
+- [Tiago Prince Sales](https://scholar.google.it/citations?user=bfaMR2YAAAAJ&hl=it)
+- [Pedro Paulo Favato Barcelos](https://scholar.google.com/citations?user=1kF9FGwAAAAJ&hl=pt-PT)
+- [Giancarlo Guizzardi](https://scholar.google.com/citations?user=nnfVBt8AAAAJ&hl=en)
+
+## ZIN Members
+
+- [Elly Kampert](https://www.linkedin.com/in/elly-kampert-van-galen/)
+- [Fabien Reniers](https://www.linkedin.com/in/fabienreniers/)
+- [Roxane Segers](https://www.linkedin.com/in/roxanesegers/)""" ;
                                       dcterms:title "ThOR Ontology"@en ;
-                                      owl:versionInfo "0.3.10" .
+                                      owl:versionInfo "0.3.11" .
 
 #################################################################
 #    Annotation properties
@@ -180,13 +192,13 @@ skos:scopeNote rdf:type owl:AnnotationProperty ;
 thor:broadMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
                   owl:inverseOf thor:narrowMapping ;
-                  rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
+                  rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two thor:SemanticElements."^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/closeMapping
 thor:closeMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
-                  rdfs:comment "The property thor:closeMapping is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications."^^rdf:langString .
+                  rdfs:comment "The property thor:closeMapping is used to link two thor:SemanticElements that are sufficiently similar that they can be used interchangeably in some information retrieval applications."^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/exactMapping
@@ -194,14 +206,16 @@ thor:exactMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
                   rdf:type owl:SymmetricProperty ,
                            owl:TransitiveProperty ;
-                  rdfs:comment "The property thor:exactMapping is used to link two semantic elements, indicating that the semantic elements can be used interchangeably across all information retrieval applications."^^rdf:langString .
+                  rdfs:comment "The property thor:exactMapping is used to link two thor:SemanticElements, indicating that the thor:SemanticElements can be used interchangeably across all information retrieval applications."^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/hasContext
 thor:hasContext rdf:type owl:ObjectProperty ;
                 rdfs:domain ontolex:LexicalConcept ;
                 rdfs:range thor:Context ;
-                rdfs:comment "If a LexicalConcept has a isLexicalizedSense of a LexicalSense that has a lexinfo:domain relation to a Domain, than the LexicalConcept has a thor:domain relation to the same Domain."^^rdf:langString .
+                rdfs:comment """Derived relation that indicates to which thor:Context an ontolex:LexicalConcept is indirectly related.
+
+Derivation rule: If an ontolex:LexicalConcept X has an ontolex:isLexicalizedSense relation with an ontolex:LexicalSense Y and Y has a lexinfo:domain relation with a thor:Context Z, then X has a thor:domain relation with Z."""^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/mappingProperty
@@ -214,14 +228,14 @@ thor:mappingProperty rdf:type owl:ObjectProperty ;
 ###  http://purl.org/net/thor-ontology/narrowMapping
 thor:narrowMapping rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf thor:mappingProperty ;
-                   rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two semantic elements."^^rdf:langString .
+                   rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two thor:SemanticElements."^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/relatedMapping
 thor:relatedMapping rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf thor:mappingProperty ;
                     rdf:type owl:SymmetricProperty ;
-                    rdfs:comment "The property thor:relatedMapping is used to state an associative mapping link between two semantic elements."^^rdf:langString .
+                    rdfs:comment "The property thor:relatedMapping is used to state an associative mapping link between two thor:SemanticElements."^^rdf:langString .
 
 
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#contractionFor
@@ -308,6 +322,7 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#broader
 skos:broader rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf skos:semanticRelation ;
              owl:inverseOf skos:narrower ;
              rdfs:domain ontolex:LexicalConcept ;
              rdfs:range ontolex:LexicalConcept ;
@@ -341,6 +356,7 @@ skos:inScheme rdf:type owl:ObjectProperty ;
 
 ###  http://www.w3.org/2004/02/skos/core#narrower
 skos:narrower rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf skos:semanticRelation ;
               rdfs:domain ontolex:LexicalConcept ;
               rdfs:range ontolex:LexicalConcept ;
               rdfs:comment "Narrower concepts are typically rendered as children in a concept hierarchy (tree)."@en ;
@@ -741,15 +757,15 @@ thor:Context rdf:type owl:Class ;
 
 ###  http://purl.org/net/thor-ontology/Definition
 thor:Definition rdf:type owl:Class ;
-                rdfs:comment "Used for reifications of the definitions of the semantic elements. With this class it is possible to relate the textual definitions with other properties, like the definition's source."^^rdf:langString .
+                rdfs:comment "This class is used for the reification of the semantic elements' definitions. With the thor:Definition class it is possible to relate the textual definitions with other properties, like the definition's source."^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/PreferredSense
 thor:PreferredSense rdf:type owl:Class ;
                     rdfs:subClassOf ontolex:LexicalSense ;
-                    rdfs:comment """It is the Lexical Sense that is associated to the Lexical Entry that is going to became the skos:prefLabel for the generated Lexical Concept.
+                    rdfs:comment """A thor:PreferredSense is the ontolex:LexicalSense that is associated with the ontolex:LexicalEntry that is going to become the skos:prefLabel for the generated ontolex:LexicalConcept.
 
-Each SynSet (set of all Lexical Senses that are synonymous between themselves) have exactly one Preferred Sense."""^^rdf:langString .
+Each SynSet (set of all Lexical Senses that are synonymous between themselves) has exactly one thor:PreferredSense."""^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/SemanticElement
@@ -759,12 +775,18 @@ thor:SemanticElement rdf:type owl:Class ;
                                                          ontolex:LexicalConcept
                                                          ontolex:LexicalSense
                                                        )
-                                         ] .
+                                         ] ;
+                     rdfs:comment "thor:SemanticElement groups ontolex:LexicalConcepts, ontolex:LexicalSenses, and Ontology Entities (represented as rdfs:Resources). This class was created for setting the domain and range of the five mapping relations that indicate links between them." .
 
 
 ###  http://purl.org/net/thor-ontology/iStandard
 thor:iStandard rdf:type owl:Class ;
-               rdfs:subClassOf thor:Context .
+               rdfs:subClassOf thor:Context ;
+               rdfs:comment """iStandards are the information standards managed by the National Health Care Institute (Zorginstituut Nederland).
+
+Examples of iStandards are: iWlz, iWmo, iJw, and iPgb.
+
+Definition source (adapted): https://istandaarden.nl/istandaarden/begrippen#i""" .
 
 
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#Adjective
