@@ -16,7 +16,7 @@
 @base <http://purl.org/net/thor-ontology/> .
 
 <http://purl.org/net/thor-ontology/> rdf:type owl:Ontology ;
-                                      owl:versionIRI <http://purl.org/net/thor-ontology/0.3.11/> ;
+                                      owl:versionIRI <http://purl.org/net/thor-ontology/0.3.12/> ;
                                       owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                                   <http://www.w3.org/ns/lemon/ontolex> ;
                                       dcterms:description """# ThOR Ontology
@@ -33,9 +33,10 @@ For the source repository, see: <https://github.com/unibz-core/thor/>
 
 ## Unibz Members
 
-- [Tiago Prince Sales](https://scholar.google.it/citations?user=bfaMR2YAAAAJ&hl=it)
-- [Pedro Paulo Favato Barcelos](https://scholar.google.com/citations?user=1kF9FGwAAAAJ&hl=pt-PT)
+- [Tiago Prince Sales](https://scholar.google.it/citations?user=bfaMR2YAAAAJ&hl=en)
+- [Pedro Paulo Favato Barcelos](https://scholar.google.com/citations?user=1kF9FGwAAAAJ&hl=en)
 - [Giancarlo Guizzardi](https://scholar.google.com/citations?user=nnfVBt8AAAAJ&hl=en)
+- [Cristine Griffo](https://scholar.google.com.sg/citations?user=TCpW-JMAAAAJ&hl=en)
 
 ## ZIN Members
 
@@ -43,7 +44,7 @@ For the source repository, see: <https://github.com/unibz-core/thor/>
 - [Fabien Reniers](https://www.linkedin.com/in/fabienreniers/)
 - [Roxane Segers](https://www.linkedin.com/in/roxanesegers/)""" ;
                                       dcterms:title "ThOR Ontology"@en ;
-                                      owl:versionInfo "0.3.11" .
+                                      owl:versionInfo "0.3.12" .
 
 #################################################################
 #    Annotation properties
@@ -192,13 +193,17 @@ skos:scopeNote rdf:type owl:AnnotationProperty ;
 thor:broadMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
                   owl:inverseOf thor:narrowMapping ;
-                  rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two thor:SemanticElements."^^rdf:langString .
+                  rdfs:comment """Is used to state a hierarchical mapping link between two semantic elements.
+
+This property is analogous to skos:broadMatch, but with broader domain and range."""^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/closeMapping
 thor:closeMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
-                  rdfs:comment "The property thor:closeMapping is used to link two thor:SemanticElements that are sufficiently similar that they can be used interchangeably in some information retrieval applications."^^rdf:langString .
+                  rdfs:comment """Is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications.
+
+This property is analogous to skos:closeMatch, but with broader domain and range."""^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/exactMapping
@@ -206,7 +211,9 @@ thor:exactMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
                   rdf:type owl:SymmetricProperty ,
                            owl:TransitiveProperty ;
-                  rdfs:comment "The property thor:exactMapping is used to link two thor:SemanticElements, indicating that the thor:SemanticElements can be used interchangeably across all information retrieval applications."^^rdf:langString .
+                  rdfs:comment """Is used to link two two semantic elements, indicating that the these semantic elements can be used interchangeably across all information retrieval applications.
+
+This property is analogous to skos:exactMatch, but with broader domain and range."""^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/hasContext
@@ -228,14 +235,18 @@ thor:mappingProperty rdf:type owl:ObjectProperty ;
 ###  http://purl.org/net/thor-ontology/narrowMapping
 thor:narrowMapping rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf thor:mappingProperty ;
-                   rdfs:comment "The properties thor:broadMapping and thor:narrowMapping are used to state a hierarchical mapping link between two thor:SemanticElements."^^rdf:langString .
+                   rdfs:comment """Is used to state a hierarchical mapping link between two two semantic elements.
+
+This property is analogous to skos:narrowMatch, but with broader domain and range."""^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/relatedMapping
 thor:relatedMapping rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf thor:mappingProperty ;
                     rdf:type owl:SymmetricProperty ;
-                    rdfs:comment "The property thor:relatedMapping is used to state an associative mapping link between two thor:SemanticElements."^^rdf:langString .
+                    rdfs:comment """Is used to state an associative mapping link between two two semantic elements.
+
+This property is analogous to skos:relatedMatch, but with broader domain and range."""^^rdf:langString .
 
 
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#contractionFor
@@ -752,7 +763,9 @@ dcterms:Agent rdf:type owl:Class ;
 
 ###  http://purl.org/net/thor-ontology/Context
 thor:Context rdf:type owl:Class ;
-             rdfs:comment "Context is used for specifying the use of senses for the better definition of them."^^rdf:langString .
+             rdfs:comment """Is used for specifying pragmatical use of lexical senses for a more precise and adequate definition of them, indicating exactly their use contexts.
+
+Examples of contexts include the iStandard iWlz, or the ZIN organization."""^^rdf:langString .
 
 
 ###  http://purl.org/net/thor-ontology/Definition
@@ -782,11 +795,11 @@ thor:SemanticElement rdf:type owl:Class ;
 ###  http://purl.org/net/thor-ontology/iStandard
 thor:iStandard rdf:type owl:Class ;
                rdfs:subClassOf thor:Context ;
-               rdfs:comment """iStandards are the information standards managed by the National Health Care Institute (Zorginstituut Nederland).
+               rdfs:comment """Are the information standards managed by the National Health Care Institute (Zorginstituut Nederland).
 
-Examples of iStandards are: iWlz, iWmo, iJw, and iPgb.
+Examples of iStandards include: iWlz, iWmo, iJw, an iPgb.
 
-Definition source (adapted): https://istandaarden.nl/istandaarden/begrippen#i""" .
+Definition source (translated from): https://istandaarden.nl/istandaarden/begrippen#i""" .
 
 
 ###  http://www.lexinfo.net/ontology/3.0/lexinfo#Adjective
