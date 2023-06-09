@@ -18,7 +18,7 @@ ThOR stands for “Thesaurus and Ontology Representation”. The ThOR Project wa
 - [Fabien Reniers](https://www.linkedin.com/in/fabienreniers/)
 - [Roxane Segers](https://www.linkedin.com/in/roxanesegers/)
 
-# Reference
+# Publication
 
-Barcelos, P. P. F., Sales, T. P., Kampert, E., Reniers, F., Segers, R., Guizzardi, G., Franke, W. (2023). Terminology & Ontology: Theories and applications (TOTh 2023). Chambéry, France. 
+Barcelos, P. P. F., Sales, T. P., Kampert, E., Reniers, F., Segers, R., Guizzardi, G., Franke, W. (2023).  17th Terminology & Ontology: Theories and applications (TOTh 2023) International Conference. Chambéry, France.
 
