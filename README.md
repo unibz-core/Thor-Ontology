@@ -8,9 +8,9 @@ ThOR stands for “Thesaurus and Ontology Representation”. The ThOR Project wa
 
 ## Unibz Members
 
-- [Tiago Prince Sales](https://scholar.google.it/citations?user=bfaMR2YAAAAJ&hl=it)
-- [Pedro Paulo Favato Barcelos](https://scholar.google.com/citations?user=1kF9FGwAAAAJ&hl=pt-PT)
-- [Giancarlo Guizzardi](https://scholar.google.com/citations?user=nnfVBt8AAAAJ&hl=en)
+- [Tiago Prince Sales](https://www.linkedin.com/in/tiago-sales/)
+- [Pedro Paulo Favato Barcelos](https://www.linkedin.com/in/pedro-paulo-favato-barcelos/)
+- [Giancarlo Guizzardi](https://www.linkedin.com/in/giancarlo-guizzardi-bb51aa75/)
 
 ## ZIN Members
 
