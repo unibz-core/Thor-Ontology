@@ -1,4 +1,4 @@
-@prefix : <http://purl.org/net/thor-ontology/> .
+@prefix : <https://w3id.org/thor/thor-ontology/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -8,15 +8,15 @@
 @prefix lime: <http://www.w3.org/ns/lemon/lime#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix thor: <http://purl.org/net/thor-ontology/> .
+@prefix thor: <https://w3id.org/thor/thor-ontology/> .
 @prefix synsem: <http://www.w3.org/ns/lemon/synsem#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@base <http://purl.org/net/thor-ontology/> .
+@base <https://w3id.org/thor/thor-ontology/> .
 
-<http://purl.org/net/thor-ontology/> rdf:type owl:Ontology ;
-                                      owl:versionIRI <http://purl.org/net/thor-ontology/0.3.12/> ;
+<https://w3id.org/thor/thor-ontology/> rdf:type owl:Ontology ;
+                                      owl:versionIRI <https://w3id.org/thor/thor-ontology/0.3.12/> ;
                                       owl:imports <http://www.w3.org/2004/02/skos/core> ,
                                                   <http://www.w3.org/ns/lemon/ontolex> ;
                                       dcterms:description """# ThOR Ontology
@@ -189,7 +189,7 @@ skos:scopeNote rdf:type owl:AnnotationProperty ;
 #    Object Properties
 #################################################################
 
-###  http://purl.org/net/thor-ontology/broadMapping
+###  https://w3id.org/thor/thor-ontology/broadMapping
 thor:broadMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
                   owl:inverseOf thor:narrowMapping ;
@@ -198,7 +198,7 @@ thor:broadMapping rdf:type owl:ObjectProperty ;
 This property is analogous to skos:broadMatch, but with broader domain and range."""^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/closeMapping
+###  https://w3id.org/thor/thor-ontology/closeMapping
 thor:closeMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
                   rdfs:comment """Is used to link two semantic elements that are sufficiently similar that they can be used interchangeably in some information retrieval applications.
@@ -206,7 +206,7 @@ thor:closeMapping rdf:type owl:ObjectProperty ;
 This property is analogous to skos:closeMatch, but with broader domain and range."""^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/exactMapping
+###  https://w3id.org/thor/thor-ontology/exactMapping
 thor:exactMapping rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf thor:mappingProperty ;
                   rdf:type owl:SymmetricProperty ,
@@ -216,7 +216,7 @@ thor:exactMapping rdf:type owl:ObjectProperty ;
 This property is analogous to skos:exactMatch, but with broader domain and range."""^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/hasContext
+###  https://w3id.org/thor/thor-ontology/hasContext
 thor:hasContext rdf:type owl:ObjectProperty ;
                 rdfs:domain ontolex:LexicalConcept ;
                 rdfs:range thor:Context ;
@@ -225,14 +225,14 @@ thor:hasContext rdf:type owl:ObjectProperty ;
 Derivation rule: If an ontolex:LexicalConcept X has an ontolex:isLexicalizedSense relation with an ontolex:LexicalSense Y and Y has a lexinfo:domain relation with a thor:Context Z, then X has a thor:domain relation with Z."""^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/mappingProperty
+###  https://w3id.org/thor/thor-ontology/mappingProperty
 thor:mappingProperty rdf:type owl:ObjectProperty ;
                      rdfs:domain thor:SemanticElement ;
                      rdfs:range thor:SemanticElement ;
                      rdfs:comment "The thor:MappingProperties are thor:closeMapping, thor:exactMapping, thor:broadMapping, thor:narrowMapping and thor:relatedMapping. These properties are used to state mapping (alignment) links between any kind of semantic element (Lexical Concepts, Lexical Senses or Lexical Entries), where the links are inherent in the meaning of the linked elements."^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/narrowMapping
+###  https://w3id.org/thor/thor-ontology/narrowMapping
 thor:narrowMapping rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf thor:mappingProperty ;
                    rdfs:comment """Is used to state a hierarchical mapping link between two two semantic elements.
@@ -240,7 +240,7 @@ thor:narrowMapping rdf:type owl:ObjectProperty ;
 This property is analogous to skos:narrowMatch, but with broader domain and range."""^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/relatedMapping
+###  https://w3id.org/thor/thor-ontology/relatedMapping
 thor:relatedMapping rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf thor:mappingProperty ;
                     rdf:type owl:SymmetricProperty ;
@@ -761,19 +761,19 @@ dcterms:Agent rdf:type owl:Class ;
               rdfs:label "Agent"@en .
 
 
-###  http://purl.org/net/thor-ontology/Context
+###  https://w3id.org/thor/thor-ontology/Context
 thor:Context rdf:type owl:Class ;
              rdfs:comment """Is used for specifying pragmatical use of lexical senses for a more precise and adequate definition of them, indicating exactly their use contexts.
 
 Examples of contexts include the iStandard iWlz, or the ZIN organization."""^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/Definition
+###  https://w3id.org/thor/thor-ontology/Definition
 thor:Definition rdf:type owl:Class ;
                 rdfs:comment "This class is used for the reification of the semantic elements' definitions. With the thor:Definition class it is possible to relate the textual definitions with other properties, like the definition's source."^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/PreferredSense
+###  https://w3id.org/thor/thor-ontology/PreferredSense
 thor:PreferredSense rdf:type owl:Class ;
                     rdfs:subClassOf ontolex:LexicalSense ;
                     rdfs:comment """A thor:PreferredSense is the ontolex:LexicalSense that is associated with the ontolex:LexicalEntry that is going to become the skos:prefLabel for the generated ontolex:LexicalConcept.
@@ -781,7 +781,7 @@ thor:PreferredSense rdf:type owl:Class ;
 Each SynSet (set of all Lexical Senses that are synonymous between themselves) has exactly one thor:PreferredSense."""^^rdf:langString .
 
 
-###  http://purl.org/net/thor-ontology/SemanticElement
+###  https://w3id.org/thor/thor-ontology/SemanticElement
 thor:SemanticElement rdf:type owl:Class ;
                      owl:equivalentClass [ rdf:type owl:Class ;
                                            owl:unionOf ( rdfs:Resource
@@ -792,7 +792,7 @@ thor:SemanticElement rdf:type owl:Class ;
                      rdfs:comment "thor:SemanticElement groups ontolex:LexicalConcepts, ontolex:LexicalSenses, and Ontology Entities (represented as rdfs:Resources). This class was created for setting the domain and range of the five mapping relations that indicate links between them." .
 
 
-###  http://purl.org/net/thor-ontology/iStandard
+###  https://w3id.org/thor/thor-ontology/iStandard
 thor:iStandard rdf:type owl:Class ;
                rdfs:subClassOf thor:Context ;
                rdfs:comment """Are the information standards managed by the National Health Care Institute (Zorginstituut Nederland).
