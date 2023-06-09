@@ -4,6 +4,8 @@ The objective of **ThOR Ontology** is to provide a vocabulary for building lexic
 
 ThOR stands for “Thesaurus and Ontology Representation”. The ThOR Project was a collaboration project that happened in 2021 between the [*Zorginstituut Nederland* (ZIN)](https://english.zorginstituutnederland.nl/) – the Dutch National Health Care Institute – and the [Conceptual and Cognitive Modeling Research Group (CORE)](https://www.inf.unibz.it/krdb/core/) from the [Free University of Bozen-Bolzano (Unibz)](https://unibz.it/).
 
+More information about the developed work is available in our [published paper](https://w3id.org/thor/paper).
+
 # Developers
 
 ## Unibz Members
@@ -20,5 +22,5 @@ ThOR stands for “Thesaurus and Ontology Representation”. The ThOR Project wa
 
 # Publication
 
-Barcelos, P. P. F., Sales, T. P., Kampert, E., Reniers, F., Segers, R., Guizzardi, G., Franke, W. (2023).  17th Terminology & Ontology: Theories and applications (TOTh 2023) International Conference. Chambéry, France.
+Barcelos, P. P. F., Sales, T. P., Kampert, E., Reniers, F., Segers, R., Guizzardi, G., Franke, W. (2023).  17th Terminology & Ontology: Theories and applications (TOTh 2023) International Conference. Chambéry, France. Available at [https://w3id.org/thor/paper](https://w3id.org/thor/paper).
 
